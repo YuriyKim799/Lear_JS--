@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Сколько секунд осталось до завтра ?
+    // Создайте функцию getSecondsToTomorrow(), возвращающую количество секунд до завтрашней даты.
+    // Например, если сейчас 23: 00, то:
+    // P.S.Функция должна работать в любой день, т.е.в ней не должно быть конкретного значения сегодняшней даты.
+
+    let date = new Date(2023, 1, 22, 8, 1, 13);
+
+    function getSecondsToTomorrow(date) {
+      let rightNow = new Date();
+      let tillTomorrow = new Date(rightNow.getFullYear(), rightNow.getMonth(), rightNow.getDate() + 1);
+      let res = tillTomorrow - date;
+
+      return Math.round(res / 1000);
+    }
+
+    alert(getSecondsToTomorrow(date))
+  </script>
+</body>
+
+</html>

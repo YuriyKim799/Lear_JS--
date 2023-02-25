@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Сортировать в порядке по убыванию
+    let arr = [5, 2, 1, -10, 8];
+
+    // ... ваш код для сортировки по убыванию
+    function compareNumeric(a, b) {
+      if (a > b) return -1;
+      if (a == b) return 0;
+      if (a < b) return 1;
+    }
+    arr.sort(compareNumeric);
+
+    alert(arr); // 8, 5, 2, 1, -10
+  </script>
+</body>
+
+</html>

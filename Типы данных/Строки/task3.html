@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, если она превосходит maxlength, заменяет конец str на "…", так, чтобы её длина стала равна maxlength.
+    // Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
+
+    function truncate(str, maxlength) {
+      if (str.length > maxlength) {
+        return str.slice(0, maxlength - 1) + "..."
+      } else if (str.length <= maxlength) {
+        return str;
+      }
+    }
+
+    console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+  </script>
+</body>
+
+</html>

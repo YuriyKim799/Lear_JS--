@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Хранение отметок "не прочитано"
+
+    // Есть массив сообщений:
+
+    let messages = [
+      { text: "Hello", from: "John" },
+      { text: "How goes?", from: "John" },
+      { text: "See you soon", from: "Alice" }
+    ];
+
+    //     У вас есть к ним доступ, но управление этим массивом происходит где - то ещё.Добавляются новые сообщения и удаляются старые, и вы не знаете в какой момент это может произойти.
+    // Имея такую вводную информацию, решите, какую структуру данных вы могли бы использовать для ответа на вопрос «было ли сообщение прочитано ?». Структура должна быть подходящей, чтобы можно было однозначно сказать, было ли прочитано это сообщение для каждого объекта сообщения.
+
+    // Можно хранить прочитанные сообщения в WeakSet
+    let readedMessage = new WeakSet();
+
+    //получим сообщение
+    readedMessage.add(messages[1])    
+
+    console.log(readedMessage.has(messages[1])); // бует true
+    console.log(readedMessage.has(messages[0])); // false
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Сколько сегодня прошло секунд ?
+    // Напишите функцию getSecondsToday(), возвращающую количество секунд с начала сегодняшнего дня.
+    // Например, если сейчас 10: 00, и не было перехода на зимнее / летнее время, то:
+    // Функция должна работать в любой день, т.е.в ней не должно быть конкретного значения сегодняшней даты.
+
+    let date = new Date(2023, 1, 23, 8, 1, 1);
+
+    function getSecondsToday(date) {
+      let rightNow = new Date();
+      console.log(rightNow);
+
+      let minus = rightNow - date;
+      console.log(minus);
+      return Math.round(minus / 1000);
+    }
+
+    alert(getSecondsToday(date))
+  </script>
+</body>
+
+</html>

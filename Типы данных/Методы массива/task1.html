@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Напишите функцию camelize(str), которая преобразует строки вида «my - short - string» в «myShortString».
+    // То есть дефисы удаляются, а все слова после них получают заглавную букву.
+
+    function camelize(str) {
+      let result = str.split('-').map((eachWord, idx) => {
+        if (idx == 0) {
+          return eachWord;
+        } else if (idx !== 0) {
+          return eachWord[0].toUpperCase() + eachWord.slice(1)
+        }
+      }).join('');
+      console.log(result);
+    }
+    console.log(camelize("gorm-fire-cool-background-color"));
+  </script>
+</body>
+
+</html>

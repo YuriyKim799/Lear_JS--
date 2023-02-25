@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Мы хотели бы получить массив ключей map.keys() в переменную и далее работать с ними, например, применить метод.push.
+
+    let map = new Map();
+
+    map.set("name", "John");
+
+    let keys = Array.from(map.keys())
+    console.log(keys);
+    // потому что keys это псевдомассив в прототипе кроме символа итерейта ничего нет 
+
+    // Error: keys.push is not a function
+    // Ошибка: keys.push -- это не функция
+    keys.push("more");
+
+  </script>
+</body>
+
+</html>

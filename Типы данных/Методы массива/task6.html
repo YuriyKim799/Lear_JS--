@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Создать расширяемый калькулятор
+    // Создайте функцию конструктор Calculator, которая создаёт «расширяемые» объекты калькулятора.
+    // Задание состоит из двух частей.
+
+    function Calculator() {
+
+      this.operations = {
+        "+": (a, b) => {
+          return a + b
+        },
+        "-": (a, b) => {
+          return a - b
+        }
+      }
+      this.addMethod = function (name, foo) {
+        this.operations[name] = foo;
+      };
+
+      this.calculate = function (str) {
+        let func = str.split(' ');
+        a = +func[0];
+        op = func[1];
+        b = +func[2];
+
+        if (!this.operations[op] || isNaN(a) || isNaN(b)) {
+          return NaN;
+        }
+
+        return this.operations[op](a, b);
+      }
+    }
+
+    let calc = new Calculator;
+    // calc.calculate("3 + 7")
+    alert(calc.calculate("3 + 7")); // 10
+
+    let powerCalc = new Calculator;
+    powerCalc.addMethod("*", (a, b) => a * b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a ** b);
+
+    let result = powerCalc.calculate("2 ** 3");
+    alert(result); // 8
+  </script>
+</body>
+
+</html>

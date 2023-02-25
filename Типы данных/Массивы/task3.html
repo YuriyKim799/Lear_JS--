@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Каков результат? Почему?
+    let arr = ["a", "b"];
+
+    arr.push(function () {
+      alert(this);
+    });
+
+    arr[2](); //  выведет весь массив, изначально у нас "a" это 0 индекс и "b" это 1 индекс пушим 2 индекс функцию и вызываем ее 
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Отфильтруйте анаграммы
+    // Анаграммы – это слова, у которых те же буквы в том же количестве, но они располагаются в другом порядке.
+    // Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
+
+    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+    function aclean(arr) {
+      let map = new Map();
+
+      for (let eachWord of arr) {
+        
+        let sorted = eachWord.toLowerCase().split("").sort().join("");
+        console.log(sorted);
+        map.set(sorted, eachWord);
+      }
+
+      // map.values() – возвращает итерируемый объект по значениям,
+      return Array.from(map.values());
+    }
+
+    alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
+
+  </script>
+</body>
+
+</html>
